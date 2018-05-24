@@ -9,6 +9,5 @@
 import Foundation
 
 struct AppUser {
-    var username: String?
-    var password: String?
+    var code: String?
 }

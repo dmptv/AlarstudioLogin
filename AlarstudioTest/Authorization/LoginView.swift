@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class LoginView: UIView {
+class LoginView: SpringView {
     
     var loginAction: (() -> Void)?
     
@@ -25,8 +25,8 @@ class LoginView: UIView {
         addSubview(backgroundImageView)
         addSubview(stackView)
         backgroundImageView.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        stackView.setAnchor(width: self.frame.width - 60, height: 210)
-        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        stackView.setAnchor(width: self.frame.width - 60, height: 140)
+        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
         stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
@@ -62,8 +62,16 @@ class LoginView: UIView {
        loginAction?()
     }
     
-    public func animateView(with animation: String) {
-        loginButton.animation = animation
+    public func animateView() {
+        loginButton.animation = AnimationPresets.Fall.rawValue
+        loginButton.curve = AnimationCurves.EaseOut.rawValue
+        loginButton.duration = 0.5
+        loginButton.force = 2.9
+        loginButton.animate()
+    }
+    
+    public func animateButton() {
+        loginButton.animation = AnimationPresets.Shake.rawValue
         loginButton.curve = AnimationCurves.EaseOut.rawValue
         loginButton.duration = 0.5
         loginButton.force = 2.9

@@ -19,6 +19,12 @@ typealias CompletionHandler = (Result) -> Void
 
 class ApiClient {
     
+    enum Codes: String {
+        case OK = "ok"
+        case Status = "status"
+        case Code = "code"
+    }
+    
     static let shared = ApiClient()
     private init(){}
     
@@ -31,19 +37,21 @@ class ApiClient {
         
         Alamofire.request(NetworkRouter.loginUser(username, password))
             .responseJSON { response in
-         
+               
                 guard response.result.isSuccess, let value = response.result.value else {
-                        print("Error while fetching user\(String(describing: response.result.error))")
+                        printMine("Error while fetching user\(String(describing: response.result.error))")
                         completion(.failure)
                         return
                 }
                 
-                if JSON(value)["status"] != "ok" {
+                if JSON(value)[Codes.Status.rawValue].stringValue != Codes.OK.rawValue {
                     completion(.failure)
                     return
+                } else if JSON(value)[Codes.Status.rawValue].stringValue == Codes.OK.rawValue  {
+                    let code = JSON(value)[Codes.Code.rawValue].intValue
+                    UserDefaults.standard.setValidationCode(value: code)
+                    completion(.sucsess)
                 }
-                
-                completion(.sucsess)
         }
         
         /*

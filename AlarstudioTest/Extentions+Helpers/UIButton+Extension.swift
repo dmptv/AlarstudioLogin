@@ -17,7 +17,7 @@ extension UIButton {
         self.layer.cornerRadius = 5
         self.layer.borderWidth = 1
         self.layer.borderColor = borderColor.cgColor
-        self.setAnchor(width: 0, height: 50)
+        self.setAnchor(width: 0, height: 40)
     }
 }
 

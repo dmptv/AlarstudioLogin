@@ -13,11 +13,16 @@ class MainNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if isLoggedIn() {
             let mainController = MainController()
             viewControllers = [mainController]
         } else {
-            perform(#selector(showLoginController), with: nil, afterDelay: 0.1)
+            perform(#selector(showLoginController), with: nil, afterDelay: 0.15)
         }
     }
     

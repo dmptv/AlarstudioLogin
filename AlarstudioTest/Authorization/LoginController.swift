@@ -51,16 +51,15 @@ class LoginController: UIViewController {
         guard let password = loginView.passwordTextField.text else { return }
         
         viewModel?.loginUser(username: login, password: password, completion:
-            { result in
+            { [unowned self] result in
                 switch result {
                 case .sucsess:
+                    self.dismiss(animated: true, completion: nil)
                     break
                 case .failure:
-                    afterDelay(0, closure: {
                         afterDelay(0, closure:{
-                            self.loginView.animateView(with: AnimationPresets.Shake.rawValue)
+                            self.loginView.animateButton()
                         })
-                    })
                     break
                 }
         })
@@ -75,6 +74,9 @@ class LoginController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    deinit {
+        printMine("deinit: \(self)")
+    }
 
 }
 

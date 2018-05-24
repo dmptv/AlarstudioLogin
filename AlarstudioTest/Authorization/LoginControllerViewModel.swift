@@ -17,15 +17,7 @@ class LoginControllerViewModel: NSObject {
     }
     
     var state: State = .notSearchedYet
-    
-    // data model
-    private var user: AppUser?
-    
-    public func setUser(_ user: AppUser? ) {
-        self.user = user
-    }
-    
-    
+
     
     func loginUser(username: String?, password: String?, completion: @escaping CompletionHandler) {
         
@@ -36,12 +28,14 @@ class LoginControllerViewModel: NSObject {
             switch result {
             case .sucsess:
                 printMine("success")
+                UserDefaults.standard.setIsLoggedIn(value: true)
                  self.state = .results
                 completion(.sucsess)
                 break
             case .failure:
                 printMine("failure")
                 self.state = .noResults
+                UserDefaults.standard.setIsLoggedIn(value: false)
                 completion(.failure)
                 break
             }
@@ -49,6 +43,9 @@ class LoginControllerViewModel: NSObject {
         }
     }
 
+    deinit {
+        printMine("deinit: \(self)")
+    }
   
 }
 

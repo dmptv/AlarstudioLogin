@@ -98,7 +98,7 @@
 			children = (
 				9DB2B94720B6E039005B4663 /* AppDelegate.swift */,
 				9DB2B95920B6E4C5005B4663 /* MainNavigationController.swift */,
-				9DB2B94920B6E039005B4663 /* MainController.swift */,
+				9DB2B9B720B74FD6005B4663 /* MainScreen */,
 				9DB2B95E20B6E908005B4663 /* Authorization */,
 				9DB2B9B420B70FFD005B4663 /* Model */,
 				9DB2B97420B6FBF6005B4663 /* Networking */,
@@ -157,6 +157,14 @@
 				9DB2B9B220B70FD8005B4663 /* AppUser.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9DB2B9B720B74FD6005B4663 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9DB2B94920B6E039005B4663 /* MainController.swift */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 		E918B7E6A762655CEF6AC8F8 /* Pods */ = {
