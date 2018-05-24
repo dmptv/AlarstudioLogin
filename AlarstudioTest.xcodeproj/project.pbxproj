@@ -7,21 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FAFC2FB791349DAAA05C6CD /* Pods_AlarstudioTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607C85425AF9185F9C3B17C5 /* Pods_AlarstudioTest.framework */; };
 		9DB2B94820B6E039005B4663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B94720B6E039005B4663 /* AppDelegate.swift */; };
-		9DB2B94A20B6E039005B4663 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B94920B6E039005B4663 /* ViewController.swift */; };
-		9DB2B94D20B6E039005B4663 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB2B94B20B6E039005B4663 /* Main.storyboard */; };
+		9DB2B94A20B6E039005B4663 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B94920B6E039005B4663 /* MainController.swift */; };
 		9DB2B94F20B6E03A005B4663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB2B94E20B6E03A005B4663 /* Assets.xcassets */; };
 		9DB2B95220B6E03A005B4663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB2B95020B6E03A005B4663 /* LaunchScreen.storyboard */; };
+		9DB2B95A20B6E4C5005B4663 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B95920B6E4C5005B4663 /* MainNavigationController.swift */; };
+		9DB2B95D20B6E8FE005B4663 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B95C20B6E8FE005B4663 /* LoginController.swift */; };
+		9DB2B96020B6EA93005B4663 /* UserDefaults+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B95F20B6EA93005B4663 /* UserDefaults+Extention.swift */; };
+		9DB2B96420B6EB1E005B4663 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DB2B96320B6EB1D005B4663 /* Info.plist */; };
+		9DB2B96620B6EBD3005B4663 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B96520B6EBD3005B4663 /* LoginView.swift */; };
+		9DB2B96820B6EC20005B4663 /* UIStackView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B96720B6EC20005B4663 /* UIStackView+Helpers.swift */; };
+		9DB2B96B20B6ED1A005B4663 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B96A20B6ED1A005B4663 /* UIView+Constraints.swift */; };
+		9DB2B96D20B6EE49005B4663 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B96C20B6EE49005B4663 /* UIColor+Extension.swift */; };
+		9DB2B96F20B6F48D005B4663 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B96E20B6F48D005B4663 /* Globals.swift */; };
+		9DB2B97120B6F6A0005B4663 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B97020B6F6A0005B4663 /* UITextField+Extension.swift */; };
+		9DB2B97320B6F703005B4663 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B97220B6F703005B4663 /* UIButton+Extension.swift */; };
+		9DB2B97620B6FC13005B4663 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B97520B6FC13005B4663 /* NetworkRouter.swift */; };
+		9DB2B9B120B70F53005B4663 /* LoginControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B9B020B70F53005B4663 /* LoginControllerViewModel.swift */; };
+		9DB2B9B320B70FD8005B4663 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B9B220B70FD8005B4663 /* AppUser.swift */; };
+		9DB2B9B620B7169D005B4663 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B9B520B7169D005B4663 /* ApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A83275A48ADDCAD0D68762F /* Pods-AlarstudioTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarstudioTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlarstudioTest/Pods-AlarstudioTest.debug.xcconfig"; sourceTree = "<group>"; };
+		607C85425AF9185F9C3B17C5 /* Pods_AlarstudioTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarstudioTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB2B94420B6E039005B4663 /* AlarstudioTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarstudioTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB2B94720B6E039005B4663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9DB2B94920B6E039005B4663 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9DB2B94C20B6E039005B4663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9DB2B94920B6E039005B4663 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		9DB2B94E20B6E03A005B4663 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DB2B95120B6E03A005B4663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9DB2B95320B6E03A005B4663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DB2B95920B6E4C5005B4663 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		9DB2B95C20B6E8FE005B4663 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		9DB2B95F20B6EA93005B4663 /* UserDefaults+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extention.swift"; sourceTree = "<group>"; };
+		9DB2B96320B6EB1D005B4663 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DB2B96520B6EBD3005B4663 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9DB2B96720B6EC20005B4663 /* UIStackView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Helpers.swift"; sourceTree = "<group>"; };
+		9DB2B96A20B6ED1A005B4663 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		9DB2B96C20B6EE49005B4663 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		9DB2B96E20B6F48D005B4663 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		9DB2B97020B6F6A0005B4663 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		9DB2B97220B6F703005B4663 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		9DB2B97520B6FC13005B4663 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		9DB2B9B020B70F53005B4663 /* LoginControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginControllerViewModel.swift; sourceTree = "<group>"; };
+		9DB2B9B220B70FD8005B4663 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		9DB2B9B520B7169D005B4663 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		A099F047B91456404BCDD17C /* Pods-AlarstudioTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarstudioTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlarstudioTest/Pods-AlarstudioTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +60,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FAFC2FB791349DAAA05C6CD /* Pods_AlarstudioTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66C6B7E4469699839851DF85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				607C85425AF9185F9C3B17C5 /* Pods_AlarstudioTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9DB2B93B20B6E039005B4663 = {
 			isa = PBXGroup;
 			children = (
 				9DB2B94620B6E039005B4663 /* AlarstudioTest */,
 				9DB2B94520B6E039005B4663 /* Products */,
+				E918B7E6A762655CEF6AC8F8 /* Pods */,
+				66C6B7E4469699839851DF85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +97,75 @@
 			isa = PBXGroup;
 			children = (
 				9DB2B94720B6E039005B4663 /* AppDelegate.swift */,
-				9DB2B94920B6E039005B4663 /* ViewController.swift */,
-				9DB2B94B20B6E039005B4663 /* Main.storyboard */,
-				9DB2B94E20B6E03A005B4663 /* Assets.xcassets */,
-				9DB2B95020B6E03A005B4663 /* LaunchScreen.storyboard */,
-				9DB2B95320B6E03A005B4663 /* Info.plist */,
+				9DB2B95920B6E4C5005B4663 /* MainNavigationController.swift */,
+				9DB2B94920B6E039005B4663 /* MainController.swift */,
+				9DB2B95E20B6E908005B4663 /* Authorization */,
+				9DB2B9B420B70FFD005B4663 /* Model */,
+				9DB2B97420B6FBF6005B4663 /* Networking */,
+				9DB2B96920B6EC27005B4663 /* Extentions+Helpers */,
+				9DB2B95B20B6E882005B4663 /* SupportingFiles */,
 			);
 			path = AlarstudioTest;
+			sourceTree = "<group>";
+		};
+		9DB2B95B20B6E882005B4663 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9DB2B94E20B6E03A005B4663 /* Assets.xcassets */,
+				9DB2B95020B6E03A005B4663 /* LaunchScreen.storyboard */,
+				9DB2B96320B6EB1D005B4663 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		9DB2B95E20B6E908005B4663 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				9DB2B95C20B6E8FE005B4663 /* LoginController.swift */,
+				9DB2B96520B6EBD3005B4663 /* LoginView.swift */,
+				9DB2B9B020B70F53005B4663 /* LoginControllerViewModel.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		9DB2B96920B6EC27005B4663 /* Extentions+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9DB2B95F20B6EA93005B4663 /* UserDefaults+Extention.swift */,
+				9DB2B96720B6EC20005B4663 /* UIStackView+Helpers.swift */,
+				9DB2B96A20B6ED1A005B4663 /* UIView+Constraints.swift */,
+				9DB2B96C20B6EE49005B4663 /* UIColor+Extension.swift */,
+				9DB2B97020B6F6A0005B4663 /* UITextField+Extension.swift */,
+				9DB2B97220B6F703005B4663 /* UIButton+Extension.swift */,
+				9DB2B96E20B6F48D005B4663 /* Globals.swift */,
+			);
+			path = "Extentions+Helpers";
+			sourceTree = "<group>";
+		};
+		9DB2B97420B6FBF6005B4663 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9DB2B9B520B7169D005B4663 /* ApiClient.swift */,
+				9DB2B97520B6FC13005B4663 /* NetworkRouter.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9DB2B9B420B70FFD005B4663 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DB2B9B220B70FD8005B4663 /* AppUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E918B7E6A762655CEF6AC8F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A83275A48ADDCAD0D68762F /* Pods-AlarstudioTest.debug.xcconfig */,
+				A099F047B91456404BCDD17C /* Pods-AlarstudioTest.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DB2B95620B6E03A005B4663 /* Build configuration list for PBXNativeTarget "AlarstudioTest" */;
 			buildPhases = (
+				8738BB63D5EC7F32EF218E05 /* [CP] Check Pods Manifest.lock */,
 				9DB2B94020B6E039005B4663 /* Sources */,
 				9DB2B94120B6E039005B4663 /* Frameworks */,
 				9DB2B94220B6E039005B4663 /* Resources */,
+				47EE5A07984E583276244F1B /* [CP] Embed Pods Frameworks */,
+				F1182A72A9152A242A999695 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,33 +231,97 @@
 			files = (
 				9DB2B95220B6E03A005B4663 /* LaunchScreen.storyboard in Resources */,
 				9DB2B94F20B6E03A005B4663 /* Assets.xcassets in Resources */,
-				9DB2B94D20B6E039005B4663 /* Main.storyboard in Resources */,
+				9DB2B96420B6EB1E005B4663 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47EE5A07984E583276244F1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AlarstudioTest/Pods-AlarstudioTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlarstudioTest/Pods-AlarstudioTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8738BB63D5EC7F32EF218E05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlarstudioTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1182A72A9152A242A999695 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlarstudioTest/Pods-AlarstudioTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9DB2B94020B6E039005B4663 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB2B94A20B6E039005B4663 /* ViewController.swift in Sources */,
+				9DB2B96620B6EBD3005B4663 /* LoginView.swift in Sources */,
+				9DB2B9B320B70FD8005B4663 /* AppUser.swift in Sources */,
+				9DB2B96820B6EC20005B4663 /* UIStackView+Helpers.swift in Sources */,
+				9DB2B9B620B7169D005B4663 /* ApiClient.swift in Sources */,
+				9DB2B95A20B6E4C5005B4663 /* MainNavigationController.swift in Sources */,
+				9DB2B96D20B6EE49005B4663 /* UIColor+Extension.swift in Sources */,
+				9DB2B96020B6EA93005B4663 /* UserDefaults+Extention.swift in Sources */,
+				9DB2B97320B6F703005B4663 /* UIButton+Extension.swift in Sources */,
+				9DB2B95D20B6E8FE005B4663 /* LoginController.swift in Sources */,
+				9DB2B97120B6F6A0005B4663 /* UITextField+Extension.swift in Sources */,
+				9DB2B97620B6FC13005B4663 /* NetworkRouter.swift in Sources */,
+				9DB2B94A20B6E039005B4663 /* MainController.swift in Sources */,
+				9DB2B9B120B70F53005B4663 /* LoginControllerViewModel.swift in Sources */,
 				9DB2B94820B6E039005B4663 /* AppDelegate.swift in Sources */,
+				9DB2B96F20B6F48D005B4663 /* Globals.swift in Sources */,
+				9DB2B96B20B6ED1A005B4663 /* UIView+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9DB2B94B20B6E039005B4663 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9DB2B94C20B6E039005B4663 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9DB2B95020B6E03A005B4663 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -278,11 +449,12 @@
 		};
 		9DB2B95720B6E03A005B4663 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A83275A48ADDCAD0D68762F /* Pods-AlarstudioTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TV52855HY8;
-				INFOPLIST_FILE = AlarstudioTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AlarstudioTest/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,11 +468,12 @@
 		};
 		9DB2B95820B6E03A005B4663 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A099F047B91456404BCDD17C /* Pods-AlarstudioTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TV52855HY8;
-				INFOPLIST_FILE = AlarstudioTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AlarstudioTest/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
