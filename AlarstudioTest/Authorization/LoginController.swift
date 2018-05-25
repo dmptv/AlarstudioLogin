@@ -64,21 +64,22 @@ class LoginController: UIViewController {
                 }
         })
     }
-    
-    fileprivate func showNetworkError() {
-        let alert = UIAlertController(title: NSLocalizedString("Whoops...", comment: "Error alert: title"),
-                                      message: NSLocalizedString("Username or password is incorrect, try again", comment: "Error alert: message"),
-                                      preferredStyle: .alert)
-        let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Error alert"), style: .default, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
-    
+
     deinit {
         printMine("deinit: \(self)")
     }
 
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

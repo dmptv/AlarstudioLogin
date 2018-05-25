@@ -12,14 +12,15 @@ import Alamofire
 public enum NetworkRouter: URLRequestConvertible {
     
     enum Constants {
-        static let baseURLPath = "http://condor.alarstudios.com"
+        static let baseURLPath = "http://condor.alarstudios.com/test"
     }
     
     case loginUser(String, String)
+    case list(Int, Int)
     
     var method: HTTPMethod {
         switch self {
-        case .loginUser:
+        case .loginUser, .list:
             return .get
         }
     }
@@ -27,7 +28,9 @@ public enum NetworkRouter: URLRequestConvertible {
     var path: String {
         switch self {
         case .loginUser:
-            return "/test/auth.cgi"
+            return "/auth.cgi"
+        case .list:
+            return "data.cgi"
         }
     }
     
@@ -36,6 +39,10 @@ public enum NetworkRouter: URLRequestConvertible {
         case .loginUser(let username, let password):
             return ["username": username,
                     "password": password
+            ]
+        case .list(let code, let page):
+            return ["code" : code,
+                    "p"    : page
             ]
         }
     }

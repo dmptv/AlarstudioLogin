@@ -20,6 +20,7 @@ class MainNavigationController: UINavigationController {
         super.viewWillAppear(animated)
         if isLoggedIn() {
             let mainController = MainController()
+            mainController.viewModel = MainControllerViewModel()
             viewControllers = [mainController]
         } else {
             perform(#selector(showLoginController), with: nil, afterDelay: 0.15)

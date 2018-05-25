@@ -8,17 +8,12 @@
 
 import Foundation
 
-class LoginControllerViewModel: NSObject {
-    enum State {
-        case notSearchedYet
-        case loading
-        case noResults
-        case results
-    }
+class LoginControllerViewModel: NSObject, NetworkLayerProtocol {
+    typealias StateEnum = State
+    typealias ResultType = Result
     
     var state: State = .notSearchedYet
 
-    
     func loginUser(username: String?, password: String?, completion: @escaping CompletionHandler) {
         
         state = .loading
@@ -30,7 +25,7 @@ class LoginControllerViewModel: NSObject {
                 printMine("success")
                 UserDefaults.standard.setIsLoggedIn(value: true)
                  self.state = .results
-                completion(.sucsess)
+                completion(.sucsess(nil))
                 break
             case .failure:
                 printMine("failure")
@@ -48,6 +43,15 @@ class LoginControllerViewModel: NSObject {
     }
   
 }
+
+
+
+
+
+
+
+
+
 
 
 

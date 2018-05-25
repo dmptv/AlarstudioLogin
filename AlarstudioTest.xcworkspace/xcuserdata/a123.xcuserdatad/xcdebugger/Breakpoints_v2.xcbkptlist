@@ -2,4 +2,84 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlarstudioTest/Cells/LoadingCell.swift"
+            timestampString = "548943929.628615"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "LoadingCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlarstudioTest.LoadingCell.spinner.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIActivityIndicatorView&gt;"
+                  moduleName = "AlarstudioTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a123/Documents/18_octobre/MyProjects/AlarstudioTest/AlarstudioTest/Cells/LoadingCell.swift"
+                  timestampString = "548943930.92386"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "79">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlarstudioTest.LoadingCell.spinner.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIActivityIndicatorView&gt;"
+                  moduleName = "AlarstudioTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a123/Documents/18_octobre/MyProjects/AlarstudioTest/AlarstudioTest/Cells/LoadingCell.swift"
+                  timestampString = "548943930.929051"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "90">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlarstudioTest.LoadingCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; AlarstudioTest.LoadingCell"
+                  moduleName = "AlarstudioTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a123/Documents/18_octobre/MyProjects/AlarstudioTest/AlarstudioTest/Cells/LoadingCell.swift"
+                  timestampString = "548943930.9331321"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlarstudioTest.LoadingCell.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;AlarstudioTest.LoadingCell&gt;"
+                  moduleName = "AlarstudioTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a123/Documents/18_octobre/MyProjects/AlarstudioTest/AlarstudioTest/Cells/LoadingCell.swift"
+                  timestampString = "548943930.9375089"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "54">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
