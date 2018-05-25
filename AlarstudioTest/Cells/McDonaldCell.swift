@@ -51,6 +51,11 @@ class McDonaldCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    private func getImgStr() -> String{
+        let url1 = "https://hips.hearstapps.com/del.h-cdn.co/assets/18/10/480x652/gallery-1520452195-delish-mcdonalds-arches-upside-down.jpeg?resize=768:*"
+        return url1
+    }
 
 }
 

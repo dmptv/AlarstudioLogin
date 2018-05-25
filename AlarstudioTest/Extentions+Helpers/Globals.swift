@@ -84,23 +84,7 @@ internal enum AnimationPresets: String {
     case Swing = "swing"
 }
 
-internal func getImgStr() -> String{
-        let url1 = "https://hips.hearstapps.com/del.h-cdn.co/assets/18/10/480x652/gallery-1520452195-delish-mcdonalds-arches-upside-down.jpeg?resize=768:*"
-        
-        let url2 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShu9rDFqFGRvuC9NzfxuzdZzVc59qC_gAaPdzaS0dG8XUiNwtX_A"
-        
-        let url3 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBq3O3DjInC3-yF5AZ7xdujZiezc0Tdvg7acpAPrSXaQBTJu_0Qw"
-        
-        let url4 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ52CfqTQVqRTmvIUPHU9SmZuGTGZSmezolWrGo-eMccFIjBrvlQ"
-        
-        let url5 = "https://www.chelovekizakonvolgograd.ru/images/stories/fact/mcdonalds.jpg"
-        
-        let arrImg = [url1, url2, url3, url4, url5]
-        
-        let random = arc4random_uniform(4000)/1000 + 1
-        
-        return arrImg[Int(random)]
-}
+
 
 
 

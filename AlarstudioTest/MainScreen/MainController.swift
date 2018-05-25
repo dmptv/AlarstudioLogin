@@ -17,13 +17,13 @@ class MainController: UIViewController {
     }
  
     var tableView: UITableView!
-    
     var indexOfPageRequest = 0
     var loadingStatus = false
-    
     var viewModel: MainControllerViewModel!
-    
     var mcDonaldsList: [McDonald?] = []
+    
+    
+    var isNotFirstPage = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +33,14 @@ class MainController: UIViewController {
         
         viewModel.mcDonaldsList.bindAndFire { [unowned self] in
             printMine("bindAndFire", $0.count)
+            
             self.mcDonaldsList.append(contentsOf: $0)
+
+            printMine("self.mcDonaldsList ", self.mcDonaldsList.count)
+
             afterDelay(0, closure: {
                 self.loadingStatus = false
+                
                 self.tableView.reloadData()
             })
         }
@@ -57,13 +62,11 @@ class MainController: UIViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.pinEdgesToSafeArea(of: view)
-        tableView.showsVerticalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = true
         tableView.separatorColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        tableView.remembersLastFocusedIndexPath = true
         
         tableView.reloadData()
     }
@@ -110,10 +113,8 @@ extension MainController: UITableViewDataSource {
                 cell.spinner.startAnimating()
                 return cell
             case .noResults:
+                /// backend error: 3840, keep downloading futher
                 loadingStatus = false
-//                return tableView.dequeueReusableCell(withIdentifier: MainCellIdentifies.nothingFoundCell,
-//                                                     for: indexPath)
-                
                 let cell = tableView.dequeueReusableCell(withIdentifier: MainCellIdentifies.mcDonaldCell,
                                                          for: indexPath) as! McDonaldCell
                 let mcDonald = mcDonaldsList[indexPath.row]
@@ -152,7 +153,7 @@ extension MainController {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
 
-        if offsetY > contentHeight - scrollView.frame.height {
+        if offsetY > contentHeight - scrollView.frame.height * 2 {
             loadData()
         }
     }
@@ -162,10 +163,14 @@ extension MainController {
             loadingStatus = true
             indexOfPageRequest += 1
             viewModel.getListWithCode(UserDefaults.standard.getCode(), page: indexOfPageRequest, completion:
-                {_ in })
+                {_ in
+            })
         }
+
     }
+
 }
+
 
 
 
