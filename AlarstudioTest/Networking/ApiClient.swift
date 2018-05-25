@@ -23,6 +23,8 @@ class ApiClient: NetworkLayerProtocol {
         case Status = "status"
         case Code = "code"
     }
+    
+    fileprivate(set) var state: State = .notSearchedYet
 
     public func authUser(username: String?, password: String?, completion: @escaping CompletionHandler) {
         
@@ -84,6 +86,57 @@ class ApiClient: NetworkLayerProtocol {
         }
     }
     
+    /// url session
+    //__________________________
+    
+    public func authUserSession(username: String?, password: String?, completion: @escaping CompletionHandler) {
+        
+        guard let username = username, let password = password else {
+            printMine("--- username password nil")
+            return
+        }
+        
+        dataTask?.cancel()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        state = .loading
+        
+        let url = authUrlWithUsername(username, password: password)
+        let session = URLSession.shared
+        dataTask = session.dataTask(with: url, completionHandler: { data, response, error in
+            
+            if let error = error as NSError?, error.code == -999 {
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let jsonData = data, let jsonDictionary = self.parse(json: jsonData) {
+                
+               
+            }
+            
+        })
+        dataTask?.resume()
+        
+    }
+    
+    fileprivate func parse(json data: Data) -> [String: Any]? {
+        do {
+            return try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String : Any]
+        } catch {
+            print("JSON Error: \(error)")
+            return nil
+        }
+    }
+    
+    fileprivate func authUrlWithUsername(_ username: String, password: String) -> URL {
+        let urlString =
+            String(format: "http://condor.alarstudios.com/test/auth.cgi?username=\(username)&password=\(password)")
+        
+        let url = URL(string: urlString)
+        print("URL: \(url!)")
+        return url!
+    }
+    
+    
     fileprivate var dataTask: URLSessionDataTask? = nil
     
     public func getListSesion(code: Int?, page: Int?, completion: @escaping CompletionHandler) {
@@ -92,10 +145,22 @@ class ApiClient: NetworkLayerProtocol {
             return
         }
         
+        dataTask?.cancel()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        state = .loading
+        
         let url = listUrlWithCode(code, page: page)
         let session = URLSession.shared
         dataTask = session.dataTask(with: url, completionHandler: { data, response, error in
             
+            if let error = error as NSError?, error.code == -999 {
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let jsonData = data, let jsonDictionary = self.parse(json: jsonData) {
+                
+                
+            }
             
         })
         dataTask?.resume()
@@ -103,7 +168,7 @@ class ApiClient: NetworkLayerProtocol {
     
     fileprivate func listUrlWithCode(_ code: Int, page: Int) -> URL {
         let urlString =
-            String(format: "http://condor.alarstudios.com/test/data.cgi?\(code)=0676833182&p=\(page)")
+            String(format: "http://condor.alarstudios.com/test/data.cgi?code=\(code)&p=\(page)")
         
         let url = URL(string: urlString)
         print("URL: \(url!)")
