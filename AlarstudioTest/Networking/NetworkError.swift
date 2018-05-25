@@ -15,10 +15,10 @@ enum NetworkError {
 }
 
 internal func showNetworkError(controller: UIViewController) {
-    let alert = UIAlertController(title: NSLocalizedString("Whoops...", comment: "Error alert: title"),
-                                  message: NSLocalizedString("Username or password is incorrect, try again", comment: "Error alert: message"),
+    let alert = UIAlertController(title: NSLocalizedString("Whoops...", comment: ""),
+                                  message: NSLocalizedString("Error Domain=NSCocoaErrorDomain Code=3840 Badly formed object around character .", comment: ""),
                                   preferredStyle: .alert)
-    let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Error alert"), style: .default, handler: nil)
+    let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
     alert.addAction(action)
     controller.present(alert, animated: true, completion: nil)
 }

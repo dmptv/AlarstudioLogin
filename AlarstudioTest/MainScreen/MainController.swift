@@ -18,7 +18,8 @@ class MainController: UIViewController {
  
     var tableView: UITableView!
     
-    var fetchingMore = false
+    var indexOfPageRequest = 0
+    var loadingStatus = false
     
     var viewModel: MainControllerViewModel!
     
@@ -27,17 +28,16 @@ class MainController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewModel?.getListWithCode(UserDefaults.standard.getCode(), completion: { [weak self] result in
-            afterDelay(0, closure: {
-                self?.tableView.reloadData()
-            })
-        })
-        
         setupViewLoadings()
         setupTableView()
         
         viewModel.mcDonaldsList.bindAndFire { [unowned self] in
-            self.mcDonaldsList = $0
+            printMine("bindAndFire", $0.count)
+            self.mcDonaldsList.append(contentsOf: $0)
+            afterDelay(0, closure: {
+                self.loadingStatus = false
+                self.tableView.reloadData()
+            })
         }
     }
 
@@ -57,6 +57,8 @@ class MainController: UIViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.pinEdgesToSafeArea(of: view)
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -89,12 +91,9 @@ class MainController: UIViewController {
 }
 
 extension MainController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if mcDonaldsList.count > 0 {
+            printMine("--- numberOfRowsInSection", self.mcDonaldsList.count)
             return mcDonaldsList.count
         }
         return 0
@@ -104,15 +103,23 @@ extension MainController: UITableViewDataSource {
 
         switch viewModel.state {
             case .notSearchedYet:
-                fatalError("Should never get here")
+                fatalError("\n\nShould never get here\n\n")
             case .loading:
                 let cell = tableView.dequeueReusableCell(withIdentifier: MainCellIdentifies.loadingCell,
                                                          for: indexPath) as! LoadingCell
                 cell.spinner.startAnimating()
                 return cell
             case .noResults:
-                return tableView.dequeueReusableCell(withIdentifier: MainCellIdentifies.nothingFoundCell,
-                                                     for: indexPath)
+                loadingStatus = false
+//                return tableView.dequeueReusableCell(withIdentifier: MainCellIdentifies.nothingFoundCell,
+//                                                     for: indexPath)
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: MainCellIdentifies.mcDonaldCell,
+                                                         for: indexPath) as! McDonaldCell
+                let mcDonald = mcDonaldsList[indexPath.row]
+                cell.configure(for: mcDonald!)
+                return cell
+            
             case .results:
                 let cell = tableView.dequeueReusableCell(withIdentifier: MainCellIdentifies.mcDonaldCell,
                                                          for: indexPath) as! McDonaldCell
@@ -127,13 +134,38 @@ extension MainController: UITableViewDataSource {
 
 extension MainController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        printMine("did select row")
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
     
 }
 
+// MARK: - UIScrollView Delegate
 
+extension MainController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+
+        if offsetY > contentHeight - scrollView.frame.height {
+            loadData()
+        }
+    }
+
+    func loadData() {
+        if !loadingStatus {
+            loadingStatus = true
+            indexOfPageRequest += 1
+            viewModel.getListWithCode(UserDefaults.standard.getCode(), page: indexOfPageRequest, completion:
+                {_ in })
+        }
+    }
+}
 
 
 

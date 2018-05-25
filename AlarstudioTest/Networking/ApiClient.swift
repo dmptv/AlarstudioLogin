@@ -60,6 +60,8 @@ class ApiClient: NetworkLayerProtocol {
             return
         }
         
+        printMine("page =", page)
+        
         Alamofire.request(NetworkRouter.list(code, page))
         .responseJSON { response in
             

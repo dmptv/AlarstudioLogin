@@ -15,7 +15,7 @@ class MainControllerViewModel: NSObject, NetworkLayerProtocol {
 
     var mcDonaldsList: Dynamic<[McDonald?]> = Dynamic([])
     var state: State = .notSearchedYet
-    
+
     func getListWithCode(_ code: Int?, page: Int = 1, completion: @escaping CompletionHandler) {
         
         state = .loading
@@ -34,6 +34,8 @@ class MainControllerViewModel: NSObject, NetworkLayerProtocol {
                              name: json["name"].stringValue)
                     })
                 strongSelf.mcDonaldsList.value = list!
+                
+                printMine("shared =", strongSelf.mcDonaldsList.value.count)
                 
                 strongSelf.state = .results
                 completion(.sucsess(nil))
