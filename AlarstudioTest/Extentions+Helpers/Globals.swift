@@ -6,7 +6,7 @@
 //  Copyright © 2018 kanat. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 internal func printMine(_ items: Any..., separator: String = " ", terminator: String = "\n") {
     #if DEBUG
@@ -84,7 +84,24 @@ internal enum AnimationPresets: String {
     case Swing = "swing"
 }
 
-
+internal func bannerView() {
+    if let applicationDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate? {
+        let rect = UIScreen.main.bounds
+        var bannerHeight: CGFloat = 20.0
+        if (rect.width == 375 && rect.height == 812) {
+            bannerHeight = 45
+        }
+        
+        if let window: UIWindow = applicationDelegate.window {
+            let blueView = UIView(frame: CGRect(x: UIScreen.main.bounds.minX,
+                                                y: UIScreen.main.bounds.minY,
+                                                width: UIScreen.main.bounds.width,
+                                                height: bannerHeight))
+            blueView.backgroundColor = .mainBlue()
+            window.addSubview(blueView)
+        }
+    }
+}
 
 
 

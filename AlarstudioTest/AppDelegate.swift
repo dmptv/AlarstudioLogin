@@ -17,22 +17,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        setWindow()
-        
-        UIApplication.shared.statusBarStyle = .lightContent
-        
-        requestNotifications()
+        setups()
         
         return true
     }
     
-    private func setWindow() {
+    private func setups() {
+        setWindow()
+        setAppearance()
+        requestNotifications()
+    }
+    
+    fileprivate func setWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = MainNavigationController()
     }
     
-    private func requestNotifications() {
+    fileprivate func setAppearance() {
+        UIApplication.shared.statusBarStyle = .lightContent
+        // set nav bar colors
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = .white
+        navigationBarAppearace.barTintColor = UIColor.mainBlue()
+        navigationBarAppearace.isTranslucent = false
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        // large title white
+        navigationBarAppearace.barStyle = .blackTranslucent
+    }
+    
+    fileprivate func requestNotifications() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { (authorized, error) in
         }
         UNUserNotificationCenter.current().delegate = self

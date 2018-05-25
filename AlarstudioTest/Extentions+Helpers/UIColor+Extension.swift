@@ -14,9 +14,9 @@ public extension UIColor {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
     }
     
-}
-
-public extension UIColor {
+    static func mainBlue() -> UIColor {
+        return #colorLiteral(red: 0.217050147, green: 0.2982768247, blue: 0.4743416878, alpha: 1)
+    }
     
     static var greenBorderColor: UIColor = {
         return UIColor(r: 80, g: 227, b: 194)
@@ -27,3 +27,12 @@ public extension UIColor {
     }()
     
 }
+
+
+
+
+
+
+
+
+

@@ -14,6 +14,8 @@ class MainController: UIViewController {
         static var loadingCell = "LoadingCell"
         static var mcDonaldCell = "McDonaldCell"
         static var nothingFoundCell = "NothingFoundCell"
+        
+        static var scrollDelta: CGFloat = 2
     }
  
     var tableView: UITableView!
@@ -21,23 +23,17 @@ class MainController: UIViewController {
     var loadingStatus = false
     var viewModel: MainControllerViewModel!
     var mcDonaldsList: [McDonald?] = []
-    
-    
-    var isNotFirstPage = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViewLoadings()
         setupTableView()
+        showBannerView()
         
         viewModel.mcDonaldsList.bindAndFire { [unowned self] in
-            printMine("bindAndFire", $0.count)
-            
+
             self.mcDonaldsList.append(contentsOf: $0)
-
-            printMine("self.mcDonaldsList ", self.mcDonaldsList.count)
-
             afterDelay(0, closure: {
                 self.loadingStatus = false
                 
@@ -51,7 +47,10 @@ class MainController: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "List"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sing Out", style: .plain, target: self, action: #selector(handleSingOut))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sing Out", style: .plain, target: self, action: #selector(handleSingOut))
+        
+//        navigationController?.navigationBar.barStyle = .blackTranslucent
+
     }
     
     private func setupTableView() {
@@ -62,7 +61,7 @@ class MainController: UIViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.pinEdgesToSafeArea(of: view)
-        tableView.showsVerticalScrollIndicator = true
+        tableView.showsVerticalScrollIndicator = false
         tableView.separatorColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         
         tableView.estimatedRowHeight = 200
@@ -78,6 +77,10 @@ class MainController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: MainCellIdentifies.mcDonaldCell)
         cellNib = UINib(nibName: MainCellIdentifies.nothingFoundCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: MainCellIdentifies.nothingFoundCell)
+    }
+    
+    private func showBannerView() {
+        bannerView()
     }
 
     @objc fileprivate func handleSingOut() {
@@ -96,7 +99,6 @@ class MainController: UIViewController {
 extension MainController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if mcDonaldsList.count > 0 {
-            printMine("--- numberOfRowsInSection", self.mcDonaldsList.count)
             return mcDonaldsList.count
         }
         return 0
@@ -113,7 +115,7 @@ extension MainController: UITableViewDataSource {
                 cell.spinner.startAnimating()
                 return cell
             case .noResults:
-                /// backend error: 3840, keep downloading futher
+                /// backend error: 3840, replay request
                 loadingStatus = false
                 let cell = tableView.dequeueReusableCell(withIdentifier: MainCellIdentifies.mcDonaldCell,
                                                          for: indexPath) as! McDonaldCell
@@ -153,9 +155,10 @@ extension MainController {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
 
-        if offsetY > contentHeight - scrollView.frame.height * 2 {
+        if offsetY > contentHeight - scrollView.frame.height * MainCellIdentifies.scrollDelta {
             loadData()
         }
+
     }
 
     func loadData() {
