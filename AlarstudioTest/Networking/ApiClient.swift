@@ -82,7 +82,32 @@ class ApiClient: NetworkLayerProtocol {
             }
             
         }
+    }
+    
+    fileprivate var dataTask: URLSessionDataTask? = nil
+    
+    public func getListSesion(code: Int?, page: Int?, completion: @escaping CompletionHandler) {
+        guard let code = code, let page = page else {
+            printMine("--- code page nil")
+            return
+        }
         
+        let url = listUrlWithCode(code, page: page)
+        let session = URLSession.shared
+        dataTask = session.dataTask(with: url, completionHandler: { data, response, error in
+            
+            
+        })
+        dataTask?.resume()
+    }
+    
+    fileprivate func listUrlWithCode(_ code: Int, page: Int) -> URL {
+        let urlString =
+            String(format: "http://condor.alarstudios.com/test/data.cgi?\(code)=0676833182&p=\(page)")
+        
+        let url = URL(string: urlString)
+        print("URL: \(url!)")
+        return url!
     }
 }
 
