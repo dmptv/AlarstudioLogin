@@ -18,26 +18,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qZU-Hn-WRT" customClass="CustomImageView" customModule="AlarstudioTest" customModuleProvider="target">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qZU-Hn-WRT" customClass="CustomImageView" customModule="AlarstudioTest" customModuleProvider="target">
                         <rect key="frame" x="16" y="11" width="90" height="90"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="Toc-YO-g8Q"/>
                             <constraint firstAttribute="height" constant="90" id="WFd-Jh-zBL"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Zkm-eW-2KF">
-                        <rect key="frame" x="110" y="11" width="261" height="45"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Zkm-eW-2KF">
+                        <rect key="frame" x="114" y="11" width="257" height="39"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvb-yC-yyp">
-                                <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvb-yC-yyp">
+                                <rect key="frame" x="0.0" y="0.0" width="257" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-HeavyItalic" family="Avenir Next" pointSize="15"/>
+                                <color key="textColor" red="0.14117647059999999" green="0.36862745099999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vf3-Ga-ilX">
-                                <rect key="frame" x="0.0" y="24.5" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vf3-Ga-ilX">
+                                <rect key="frame" x="0.0" y="24.5" width="257" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -49,7 +49,7 @@
                     <constraint firstItem="Zkm-eW-2KF" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="WM9-g0-Wch" secondAttribute="bottom" constant="-8" id="OEH-nR-riw"/>
                     <constraint firstItem="Zkm-eW-2KF" firstAttribute="top" secondItem="qZU-Hn-WRT" secondAttribute="top" id="WF5-5E-kKD"/>
                     <constraint firstAttribute="trailing" secondItem="Zkm-eW-2KF" secondAttribute="trailing" constant="4" id="cpp-9l-bwT"/>
-                    <constraint firstItem="Zkm-eW-2KF" firstAttribute="leading" secondItem="qZU-Hn-WRT" secondAttribute="trailing" constant="4" id="s07-xs-1iG"/>
+                    <constraint firstItem="Zkm-eW-2KF" firstAttribute="leading" secondItem="qZU-Hn-WRT" secondAttribute="trailing" constant="8" id="s07-xs-1iG"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

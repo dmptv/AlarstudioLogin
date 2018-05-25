@@ -24,25 +24,6 @@ struct McDonaldsList {
 }
 
 
-/*
-{
-    data = (
-                McDonald,
-                McDonald,
-                {
-                country = "United States of America";
-                id = KVQQ;
-                lat = "30.21877777777778";
-                lon = "-81.87716666666665";
-                name = CECIL;
-                }
-           );
- 
-    page = 1;
-    status = ok;
-}
-*/
-
 
 
 

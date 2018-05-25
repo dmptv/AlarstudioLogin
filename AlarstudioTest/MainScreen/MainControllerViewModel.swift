@@ -12,10 +12,10 @@ import SwiftyJSON
 class MainControllerViewModel: NSObject, NetworkLayerProtocol {
     typealias StateEnum = State
     typealias ResultType = Result
-    
-    var mcDonaldsList = [McDonald?]()
+
+    var mcDonaldsList: Dynamic<[McDonald?]> = Dynamic([])
     var state: State = .notSearchedYet
-        
+    
     func getListWithCode(_ code: Int?, page: Int = 1, completion: @escaping CompletionHandler) {
         
         state = .loading
@@ -27,14 +27,14 @@ class MainControllerViewModel: NSObject, NetworkLayerProtocol {
             switch result {
             case .sucsess(let value as AnyObject):
                 let list: [McDonald]? = (JSON(value)["data"].array?.map { json in
-                    McDonald(country: json["contry"].stringValue,
+                    McDonald(country: json["country"].stringValue,
                              id: json["id"].stringValue,
                              lat: json["lat"].stringValue,
                              lon: json["lon"].stringValue,
                              name: json["name"].stringValue)
                     })
+                strongSelf.mcDonaldsList.value = list!
                 
-                strongSelf.mcDonaldsList.append(contentsOf: list!)                
                 strongSelf.state = .results
                 completion(.sucsess(nil))
                 break

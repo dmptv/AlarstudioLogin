@@ -22,6 +22,8 @@ class MainController: UIViewController {
     
     var viewModel: MainControllerViewModel!
     
+    var mcDonaldsList: [McDonald?] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +34,11 @@ class MainController: UIViewController {
         })
         
         setupViewLoadings()
-        setupTableView() 
+        setupTableView()
+        
+        viewModel.mcDonaldsList.bindAndFire { [unowned self] in
+            self.mcDonaldsList = $0
+        }
     }
 
     private func setupViewLoadings() {
@@ -51,6 +57,11 @@ class MainController: UIViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.pinEdgesToSafeArea(of: view)
+        
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.remembersLastFocusedIndexPath = true
         
         tableView.reloadData()
     }
@@ -83,8 +94,10 @@ extension MainController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = viewModel?.mcDonaldsList.count else { return 0 }
-        return count
+        if mcDonaldsList.count > 0 {
+            return mcDonaldsList.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,7 +116,7 @@ extension MainController: UITableViewDataSource {
             case .results:
                 let cell = tableView.dequeueReusableCell(withIdentifier: MainCellIdentifies.mcDonaldCell,
                                                          for: indexPath) as! McDonaldCell
-                let mcDonald = viewModel.mcDonaldsList[indexPath.row]
+                let mcDonald = mcDonaldsList[indexPath.row]
                 cell.configure(for: mcDonald!)
                
                 return cell

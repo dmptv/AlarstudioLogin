@@ -22,7 +22,7 @@ internal func afterDelay(_ seconds: Double, closure: @escaping () -> ()) {
     DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: closure)
 }
 
-public enum AnimationCurves: String {
+internal enum AnimationCurves: String {
     case EaseIn = "easeIn"
     case EaseOut = "easeOut"
     case EaseInOut = "easeInOut"
@@ -54,7 +54,7 @@ public enum AnimationCurves: String {
     case EaseInOutBack = "easeInOutBack"
 }
 
-public enum AnimationPresets: String {
+internal enum AnimationPresets: String {
     case SlideLeft = "slideLeft"
     case SlideRight = "slideRight"
     case SlideDown = "slideDown"
@@ -83,3 +83,41 @@ public enum AnimationPresets: String {
     case Wobble = "wobble"
     case Swing = "swing"
 }
+
+internal func getImgStr() -> String{
+        let url1 = "https://hips.hearstapps.com/del.h-cdn.co/assets/18/10/480x652/gallery-1520452195-delish-mcdonalds-arches-upside-down.jpeg?resize=768:*"
+        
+        let url2 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShu9rDFqFGRvuC9NzfxuzdZzVc59qC_gAaPdzaS0dG8XUiNwtX_A"
+        
+        let url3 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBq3O3DjInC3-yF5AZ7xdujZiezc0Tdvg7acpAPrSXaQBTJu_0Qw"
+        
+        let url4 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ52CfqTQVqRTmvIUPHU9SmZuGTGZSmezolWrGo-eMccFIjBrvlQ"
+        
+        let url5 = "https://www.chelovekizakonvolgograd.ru/images/stories/fact/mcdonalds.jpg"
+        
+        let arrImg = [url1, url2, url3, url4, url5]
+        
+        let random = arc4random_uniform(4000)/1000 + 1
+        
+        return arrImg[Int(random)]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
