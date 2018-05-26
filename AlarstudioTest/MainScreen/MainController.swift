@@ -138,8 +138,10 @@ extension MainController: UITableViewDataSource {
 extension MainController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mapVC = MapViewController()
-        navigationController?.pushViewController(mapVC, animated: false)
+        if let mc = mcDonaldsList[indexPath.row] {
+            let mapVC = MapViewController(mc)
+            navigationController?.pushViewController(mapVC, animated: false)
+        }
         tableView.deselectRow(at: indexPath, animated: false)
     }
     

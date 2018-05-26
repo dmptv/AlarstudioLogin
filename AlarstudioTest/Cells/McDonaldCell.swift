@@ -44,7 +44,7 @@ class McDonaldCell: UITableViewCell {
         logoImgView.layer.masksToBounds = true
         
         let selectedView = UIView(frame: CGRect.zero)
-        selectedView.backgroundColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 0.5)
+        selectedView.backgroundColor = UIColor.greenBackGround
         selectedBackgroundView = selectedView
     }
     

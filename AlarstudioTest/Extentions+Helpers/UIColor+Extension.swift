@@ -26,6 +26,10 @@ public extension UIColor {
         return UIColor(r: 255, g: 151, b: 164)
     }()
     
+    static var greenBackGround: UIColor = {
+    return UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 0.5)
+    }()
+    
 }
 
 
