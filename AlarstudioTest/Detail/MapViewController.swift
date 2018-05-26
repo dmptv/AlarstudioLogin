@@ -24,21 +24,6 @@ class MapViewController: UIViewController {
         return btn
     }()
     
-    @objc private func backToCafe() {
-        setRegion()
-    
-        btnToCafe.animation = AnimationPresets.Morph.rawValue
-        btnToCafe.curve = AnimationCurves.EaseInOut.rawValue
-        btnToCafe.duration = 0.1
-        btnToCafe.force = 0.3
-        btnToCafe.animate()
-    }
-    
-    fileprivate func setRegion() {
-        let region = MKCoordinateRegion(center: cafe.midCoordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        mapView.setRegion(region, animated: true)
-    }
-    
     init(_ mc: McDonald) {
         self.mcDonald = mc
         super.init(nibName: nil, bundle: nil)
@@ -55,7 +40,6 @@ class MapViewController: UIViewController {
         setupMapview()
         setInteractiveRecognizer()
     }
-
     
     private func setupMapview() {
         mapView = MKMapView()
@@ -71,10 +55,26 @@ class MapViewController: UIViewController {
         let myAnnotation: MKPointAnnotation = MKPointAnnotation()
         myAnnotation.coordinate = cafe.midCoordinate
         myAnnotation.title = cafe.name
+        myAnnotation.subtitle = cafe.country
         mapView.addAnnotation(myAnnotation)
         
         setContsraints()
     }
+    
+    private func setInteractiveRecognizer() {
+        guard let controller = navigationController else { return }
+        popRecognizer = InteractivePopRecognizer(controller: controller)
+        controller.interactivePopGestureRecognizer?.delegate = popRecognizer
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    deinit {
+        printMine("\(self)")
+    }
+}
+
+
+extension MapViewController {
     
     fileprivate func setContsraints() {
         mapView.addSubview(btnToCafe)
@@ -82,18 +82,23 @@ class MapViewController: UIViewController {
         btnToCafe.setAnchor(top: nil, left: nil, bottom: mapView.bottomAnchor, right: mapView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: -30, paddingRight: 20)
         btnToCafe.setAnchor(width: 40, height: 40)
     }
-
-    private func setInteractiveRecognizer() {
-        guard let controller = navigationController else { return }
-        popRecognizer = InteractivePopRecognizer(controller: controller)
-        controller.interactivePopGestureRecognizer?.delegate = popRecognizer
-        navigationController?.setNavigationBarHidden(true, animated: false)
+    
+    
+    @objc fileprivate func backToCafe() {
+        setRegion()
+        
+        btnToCafe.animation = AnimationPresets.Morph.rawValue
+        btnToCafe.curve = AnimationCurves.EaseInOut.rawValue
+        btnToCafe.duration = 0.1
+        btnToCafe.force = 0.3
+        btnToCafe.animate()
     }
-
-
+    
+    fileprivate func setRegion() {
+        let region = MKCoordinateRegion(center: cafe.midCoordinate, span: MKCoordinateSpan(latitudeDelta: 1.1, longitudeDelta: 1.1))
+        mapView.setRegion(region, animated: true)
+    }
 }
-
-
 
 
 

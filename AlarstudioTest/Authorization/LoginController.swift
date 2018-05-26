@@ -50,18 +50,17 @@ class LoginController: UIViewController {
         guard let login = loginView.loginTextField.text else { return }
         guard let password = loginView.passwordTextField.text else { return }
         
-        viewModel?.loginUser(username: login, password: password, completion:
-            { [unowned self] result in
-                switch result {
-                case .sucsess:
-                    self.dismiss(animated: true, completion: nil)
-                    break
-                case .failure:
-                        afterDelay(0, closure:{
-                            self.loginView.animateButton()
-                        })
-                    break
-                }
+        viewModel?.loginUserSesion(username: login, password: password, completion: { [unowned self] result in
+            switch result {
+            case .sucsess:
+                self.dismiss(animated: true, completion: nil)
+                break
+            case .failure:
+                afterDelay(0, closure:{
+                    self.loginView.animateButton()
+                })
+                break
+            }
         })
     }
 

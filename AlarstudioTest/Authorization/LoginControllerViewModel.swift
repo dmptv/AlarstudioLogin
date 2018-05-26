@@ -13,18 +13,18 @@ class LoginControllerViewModel: NSObject, NetworkLayerProtocol {
     typealias ResultType = Result
     
     var state: State = .notSearchedYet
-
-    func loginUser(username: String?, password: String?, completion: @escaping CompletionHandler) {
+    
+     func loginUserSesion(username: String?, password: String?, completion: @escaping CompletionHandler) {
         
         state = .loading
         
-        ApiClient.shared.authUser(username: username, password: password) { result in
+        ApiClient.shared.authUserSession(username: username, password: password, completion: { result in
             
             switch result {
             case .sucsess:
                 printMine("success")
                 UserDefaults.standard.setIsLoggedIn(value: true)
-                 self.state = .results
+                self.state = .results
                 completion(.sucsess(nil))
                 break
             case .failure:
@@ -34,8 +34,9 @@ class LoginControllerViewModel: NSObject, NetworkLayerProtocol {
                 completion(.failure)
                 break
             }
-            
-        }
+
+        })
+        
     }
 
     deinit {

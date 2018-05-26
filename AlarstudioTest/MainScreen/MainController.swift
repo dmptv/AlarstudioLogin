@@ -26,7 +26,7 @@ class MainController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupViewLoadings()
         setupTableView()
         showBannerView()
@@ -41,6 +41,12 @@ class MainController: UIViewController {
             })
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 
     private func setupViewLoadings() {
         view.backgroundColor = .white
@@ -49,7 +55,7 @@ class MainController: UIViewController {
         navigationItem.title = "List"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sing Out", style: .plain, target: self, action: #selector(handleSingOut))
         
-//        navigationController?.navigationBar.barStyle = .blackTranslucent
+        navigationController?.navigationBar.barStyle = .blackTranslucent
 
     }
     
@@ -168,9 +174,8 @@ extension MainController {
         if !loadingStatus {
             loadingStatus = true
             indexOfPageRequest += 1
-            viewModel.getListWithCode(UserDefaults.standard.getCode(), page: indexOfPageRequest, completion:
-                {_ in
-            })
+
+            viewModel.getListWithSessionCode(UserDefaults.standard.getCode(), page: indexOfPageRequest, completion: {_ in})
         }
 
     }
