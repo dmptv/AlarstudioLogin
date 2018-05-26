@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+
 typealias Json = [String: Any]
 
 struct McDonald {

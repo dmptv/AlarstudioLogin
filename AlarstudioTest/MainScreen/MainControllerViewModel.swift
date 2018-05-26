@@ -24,7 +24,7 @@ class MainControllerViewModel: NSObject, NetworkLayerProtocol {
             switch result {
             case .sucsess(let value as AnyObject):
 
-                if let data = value["data"] as? [[String: Any]] {
+                if let data = value["data"] as? [Json] {
                     let list = data.map { json in
                         McDonald(json: json)
                     }

@@ -6,7 +6,5 @@ target 'AlarstudioTest' do
   use_frameworks!
 
   # Pods for AlarstudioTest
-pod 'Alamofire'
 pod 'Spring'
-pod 'SwiftyJSON'
 end

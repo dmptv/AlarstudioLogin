@@ -110,9 +110,9 @@ extension ApiClient {
         return url!
     }
     
-    fileprivate func parse(json data: Data) -> [String: Any]? {
+    fileprivate func parse(json data: Data) -> Json? {
         do {
-            return try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String : Any]
+            return try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? Json
         } catch {
             print("JSON Error: \(error)")
             return nil
