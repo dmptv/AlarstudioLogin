@@ -15,7 +15,7 @@ class MainController: UIViewController {
         static var mcDonaldCell = "McDonaldCell"
         static var nothingFoundCell = "NothingFoundCell"
         
-        static var scrollDelta: CGFloat = 2
+        static var scrollDelta: CGFloat = 7
     }
  
     var tableView: UITableView!
