@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6FAFC2FB791349DAAA05C6CD /* Pods_AlarstudioTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607C85425AF9185F9C3B17C5 /* Pods_AlarstudioTest.framework */; };
+		9D43AEEC20B9219D006563A3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D43AEEB20B9219D006563A3 /* MapViewController.swift */; };
+		9D43AEEF20B92591006563A3 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D43AEEE20B92591006563A3 /* Cafe.swift */; };
+		9D43AEF120B93389006563A3 /* InteractivePopRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D43AEF020B93389006563A3 /* InteractivePopRecognizer.swift */; };
 		9DB2B94820B6E039005B4663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B94720B6E039005B4663 /* AppDelegate.swift */; };
 		9DB2B94A20B6E039005B4663 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB2B94920B6E039005B4663 /* MainController.swift */; };
 		9DB2B94F20B6E03A005B4663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB2B94E20B6E03A005B4663 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		4A83275A48ADDCAD0D68762F /* Pods-AlarstudioTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarstudioTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlarstudioTest/Pods-AlarstudioTest.debug.xcconfig"; sourceTree = "<group>"; };
 		607C85425AF9185F9C3B17C5 /* Pods_AlarstudioTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarstudioTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D43AEEB20B9219D006563A3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9D43AEEE20B92591006563A3 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
+		9D43AEF020B93389006563A3 /* InteractivePopRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractivePopRecognizer.swift; sourceTree = "<group>"; };
 		9DB2B94420B6E039005B4663 /* AlarstudioTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarstudioTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB2B94720B6E039005B4663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB2B94920B6E039005B4663 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -95,6 +101,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9D43AEED20B92219006563A3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9D43AEEB20B9219D006563A3 /* MapViewController.swift */,
+				9D43AEF020B93389006563A3 /* InteractivePopRecognizer.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		9DB2B93B20B6E039005B4663 = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +135,9 @@
 				9DB2B95920B6E4C5005B4663 /* MainNavigationController.swift */,
 				9DECDED520B81CD1009C02EF /* CustomImageView.swift */,
 				9DECDED720B83C2F009C02EF /* DynamicTypes.swift */,
-				9DB2B9B720B74FD6005B4663 /* MainScreen */,
 				9DB2B95E20B6E908005B4663 /* Authorization */,
+				9DB2B9B720B74FD6005B4663 /* MainScreen */,
+				9D43AEED20B92219006563A3 /* Detail */,
 				9DECDEC820B80D11009C02EF /* Cells */,
 				9DB2B9B420B70FFD005B4663 /* Model */,
 				9DB2B97420B6FBF6005B4663 /* Networking */,
@@ -180,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				9DB2B9BB20B7F778005B4663 /* McDonald.swift */,
+				9D43AEEE20B92591006563A3 /* Cafe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,16 +373,19 @@
 				9DECDECE20B80EE1009C02EF /* McDonaldCell.swift in Sources */,
 				9DB2B95A20B6E4C5005B4663 /* MainNavigationController.swift in Sources */,
 				9DB2B96D20B6EE49005B4663 /* UIColor+Extension.swift in Sources */,
+				9D43AEEC20B9219D006563A3 /* MapViewController.swift in Sources */,
 				9DECDED620B81CD1009C02EF /* CustomImageView.swift in Sources */,
 				9DB2B96020B6EA93005B4663 /* UserDefaults+Extention.swift in Sources */,
 				9DB2B97320B6F703005B4663 /* UIButton+Extension.swift in Sources */,
 				9DB2B95D20B6E8FE005B4663 /* LoginController.swift in Sources */,
+				9D43AEF120B93389006563A3 /* InteractivePopRecognizer.swift in Sources */,
 				9DB2B97120B6F6A0005B4663 /* UITextField+Extension.swift in Sources */,
 				9DB2B97620B6FC13005B4663 /* NetworkRouter.swift in Sources */,
 				9DB2B9BC20B7F778005B4663 /* McDonald.swift in Sources */,
 				9DB2B94A20B6E039005B4663 /* MainController.swift in Sources */,
 				9DB2B9B120B70F53005B4663 /* LoginControllerViewModel.swift in Sources */,
 				9DECDECA20B80D3B009C02EF /* LoadingCell.swift in Sources */,
+				9D43AEEF20B92591006563A3 /* Cafe.swift in Sources */,
 				9DB2B94820B6E039005B4663 /* AppDelegate.swift in Sources */,
 				9DB2B9BE20B805E5005B4663 /* NetworkError.swift in Sources */,
 				9DB2B96F20B6F48D005B4663 /* Globals.swift in Sources */,
