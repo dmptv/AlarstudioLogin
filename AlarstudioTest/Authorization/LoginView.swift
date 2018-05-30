@@ -38,14 +38,14 @@ class LoginView: SpringView {
     }()
     
     let loginTextField: UITextField = {
-        let tf = UITextField(placeHolder: "username")
+        let tf = UITextField(placeHolder: "test")
         tf.clearsOnBeginEditing = true
         tf.autocapitalizationType = .none
         return tf
     }()
     
     let passwordTextField: UITextField = {
-        let tf = UITextField(placeHolder: "password")
+        let tf = UITextField(placeHolder: "123")
         tf.isSecureTextEntry = true
         tf.clearsOnBeginEditing = true
         tf.autocapitalizationType = .none

@@ -1,0 +1,96 @@
+/* 
+  Response.strings
+  AlarstudioTest
+
+  Created by 123 on 26.05.2018.
+  Copyright © 2018 kanat. All rights reserved.
+*/
+
+ /// ["status": error, "code": ]
+
+/*
+ jsonDictionary ["status": ok, "data": <__NSArrayI 0x6000000b10a0>(
+ {
+ country = "United States of America";
+ id = KVQQ;
+ lat = "30.21877777777778";
+ lon = "-81.87716666666665";
+ name = CECIL;
+ },
+ {
+ country = "United States of America";
+ id = KNQX;
+ lat = "24.57463611111111";
+ lon = "-81.68664444444445";
+ name = "KEY WEST NAS/BOCA CHICA FIELD";
+ },
+ {
+ country = "United States of America";
+ id = KEYW;
+ lat = "24.55611111111111";
+ lon = "-81.75955555555555";
+ name = "KEY WEST INTL";
+ },
+ {
+ country = "United States of America";
+ id = KISM;
+ lat = "28.28980555555556";
+ lon = "-81.43708333333333";
+ name = "KISSIMMEE GATEWAY";
+ },
+ {
+ country = "United States of America";
+ id = KLAL;
+ lat = "27.98891666666667";
+ lon = "-82.01855555555555";
+ name = "LAKELAND LINDER RGNL";
+ },
+ {
+ country = "United States of America";
+ id = KLEE;
+ lat = "28.82288888888889";
+ lon = "-81.80841666666666";
+ name = "LEESBURG INTL";
+ },
+ {
+ country = "United States of America";
+ id = KMCF;
+ lat = "27.84933333333333";
+ lon = "-82.52116666666666";
+ name = "MACDILL AFB";
+ },
+ {
+ country = "United States of America";
+ id = KMTH;
+ lat = "24.72619444444444";
+ lon = "-81.05136111111111";
+ name = "THE FLORIDA KEYS MARATHON";
+ },
+ {
+ country = "United States of America";
+ id = KNRB;
+ lat = "30.391375";
+ lon = "-81.42451944444444";
+ name = "MAYPORT NS (ADM DAVID L. MCDONALD FIELD)";
+ },
+ {
+ country = "United States of America";
+ id = KMLB;
+ lat = "28.10275";
+ lon = "-80.64525";
+ name = "MELBOURNE INTL";
+ }
+ )
+ , "page": 1]
+
+ */
+
+
+
+
+
+
+
+
+
+
